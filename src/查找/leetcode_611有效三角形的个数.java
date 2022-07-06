@@ -7,41 +7,31 @@ import java.util.List;
 public class leetcode_611有效三角形的个数 {
     public static void main(String[] args) {
         Solution3 solution3 = new Solution3();
-        //int i = solution3.triangleNumber(new int[]{1, 2, 3, 4,5,6});
-        System.out.println(1/2);
-
-
-
     }
 }
 
 
 class Solution3 {
     public int triangleNumber(int[] nums) {
-        int len = nums.length;
-        int left,right;
-        int sum = 0;
-        for(int i = 0;i<len-2;i++){
-            left = i+1;
-            right = i+2;
-            while (right <= len){
-                if(nums[i] == 0 || nums[left] == 0 || nums[right] == 0){
-                    break;
+        int n = nums.length;
+        Arrays.sort(nums);
+        int ans = 0;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                int left = j + 1, right = n - 1, k = j;
+                while (left <= right) {
+                    int mid = (left + right) / 2;
+                    //这里，i代表的是第一条边，j代表的是第二条边，所以使用用二分法找第三条边。
+                    if (nums[mid] < nums[i] + nums[j]) {
+                        k = mid;
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
                 }
-                if(nums[i] + nums[left] > nums[right] && right <len){
-                    System.out.println(nums[i] + " " + nums[left] + " " + nums[right]);
-                    sum++;
-                    right++;
-                }else if (nums[i] + nums[left] <= nums[right] && right <len){
-                    right++;
-                }else if (right == len && right-left>=1){
-                    left++;
-                    right = left+1;
-                }else{
-                    break;
-                }
+                ans += k - j;
             }
         }
-        return sum;
+        return ans;
     }
 }
