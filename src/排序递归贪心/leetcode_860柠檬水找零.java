@@ -1,4 +1,4 @@
-package 排序;
+package 排序递归贪心;
 
 public class leetcode_860柠檬水找零 {
     public static void main(String[] args) {
