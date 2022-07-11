@@ -4,11 +4,12 @@ import java.util.*;
 
 /**
  * @author YangChenxi
+ * 排序+双指针
  */
 public class leetcode16_最接近的三数之和 {
     public static void main(String[] args) {
         Solution10 solution10 = new Solution10();
-        System.out.println(solution10.threeSumClosest(new int[]{1,1,1,0},-100));
+        System.out.println(solution10.threeSumClosest(new int[]{4,0,5,-5,3,3,0,-4,-5},-2));
     }
 }
 class Solution10 {
@@ -16,16 +17,16 @@ class Solution10 {
         Arrays.sort(nums);
         int ans = Integer.MAX_VALUE;
         int len = nums.length;
-        int min = Integer.MAX_VALUE;
         for(int a = 0;a < len;a++){
             if(a > 0 && nums[a] == nums[a-1]){
                 continue;
             }
+            int b = a+1;
             int c = len-1;
-            for(int b = a+1;b<len;b++){
-                if(b >= c){
-                    break;
-                }
+            /*
+            这一步为什么必须要while不能用for循环呢，因为比如需要b不变然后让c向前移动，这时候执行c--就跳出循环了，直接到b的循环里进行b++了，就会产生错误。
+             */
+            while (b<c){
                 int sum = nums[a] + nums[b] + nums[c];
                 if(sum == target){
                     return sum;
