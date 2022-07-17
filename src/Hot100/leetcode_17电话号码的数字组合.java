@@ -27,13 +27,12 @@ class Solution5{
         put('9', "wxyz");
     }};
     public List<String> letterCombinations(String digits) {
-        if(digits.equals("")){
+        if(digits.length() == 0){
             ans.add(string.toString());
             return ans;
         }
         backtrack(digits,0);
         return ans;
-
     }
 
 
