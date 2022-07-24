@@ -8,7 +8,7 @@ import java.util.List;
 public class leetcode_47全排列2 {
     public static void main(String[] args) {
         Solution8 solution8 = new Solution8();
-        List<List<Integer>> permute = solution8.permute(new int[]{1, 1, 2});
+        List<List<Integer>> permute = solution8.permute(new int[]{1, 3, 2});
         System.out.println(permute.toString());
     }
 }

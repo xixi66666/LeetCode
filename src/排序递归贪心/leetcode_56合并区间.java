@@ -20,7 +20,6 @@ class Solution13 {
         for(int[] i : intervals){
             System.out.println(Arrays.toString(i));
         }
-
         int start = intervals[0][0];
         int end = intervals[0][1];
         for(int[] n : intervals){
