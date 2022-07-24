@@ -30,7 +30,7 @@ dp:
 1  1
 这时候i = 2 j = 2 的位置的dp值就为2，表示长度为1和长度为2 的两个正方形。
  */
-class Solution15 {
+class Solution16 {
     public int countSquares(int[][] matrix) {
         int count = 0;
         int[][] dp = new int[matrix.length][matrix[0].length];
