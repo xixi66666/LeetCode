@@ -51,7 +51,6 @@ public class leetcode_40组合总和2 {
 class Solution2 {
     List<List<Integer>> ans = new ArrayList<List<Integer>>();
     List<Integer> t = new ArrayList<>();
-    Set<List<Integer>> set = new HashSet<>();
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         backtrack(candidates,target,0,0);
@@ -69,7 +68,7 @@ class Solution2 {
             int rs = candidates[i] + sum;
             if(rs <= target) {
                 t.add(candidates[i]);
-                //System.out.println(t);
+                System.out.println(t);
                 backtrack(candidates,target,rs,i+1);
                 t.remove(t.size()-1);
             } else {
