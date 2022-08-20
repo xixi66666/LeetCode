@@ -9,7 +9,7 @@ import java.util.Map;
 public class leetcode_38外观数列 {
     public static void main(String[] args) {
         Solution2 solution2 = new Solution2();
-        String s = solution2.countAndSay(4);
+        String s = solution2.countAndSay(5);
         System.out.println(s);
     }
 }
@@ -20,7 +20,6 @@ class Solution2 {
             StringBuilder sb = new StringBuilder();
             int start = 0;
             int pos = 0;
-
             while (pos < str.length()) {
                 while (pos < str.length() && str.charAt(pos) == str.charAt(start)) {
                     pos++;
