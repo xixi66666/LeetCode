@@ -8,6 +8,9 @@ public class leetcode_315计算右侧小于当前元素的个数 {
 
     }
 }
+/*
+时间复杂度太高了，超时了。
+ */
 class Solution3 {
     public List<Integer> countSmaller(int[] nums) {
         List<Integer> ans = new ArrayList<>();

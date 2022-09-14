@@ -16,7 +16,6 @@ public class leetcode_105从前序与中序遍历序列构造二叉树 {
  */
 class Solution {
         private Map<Integer, Integer> indexMap;
-
         public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
             if (preorder_left > preorder_right) {
                 return null;

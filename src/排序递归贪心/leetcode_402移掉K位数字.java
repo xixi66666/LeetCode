@@ -13,18 +13,22 @@ public class leetcode_402移掉K位数字 {
 }
 class Solution8 {
     public String removeKdigits(String num, int k) {
-        char s1 = 32677;
-        String ans = "";
-        for(int i = 0;i<k;i++){
-            int index = i;
-            for(int j = i;j<num.length();j++){
-                if(num.charAt(index) < num.charAt(j)){
-                    index = j;
+        StringBuilder ans = new StringBuilder();
+        int len = num.length();
+        while(k>0){
+            for(int i = 0;i<len;i++){
+                if(ans.length() == 0){
+                    ans.append(num.charAt(i));
+                }else if (num.charAt(i) < num.charAt(i-1)){
+                    System.out.println("before = " + ans);
+                    ans = ans.replace(ans.length()-1,ans.length(), String.valueOf(num.charAt(i)));
+                    System.out.println("after = " + ans);
+                    k--;
+                }else{
+                    ans.append(num.charAt(i));
                 }
             }
-            ans = num.charAt(index) + ans;
-            num.replace(num.charAt(index),s1);
         }
-        return ans;
+        return ans.toString();
     }
 }
