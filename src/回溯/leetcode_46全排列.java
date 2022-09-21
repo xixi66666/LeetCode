@@ -1,5 +1,7 @@
 package 回溯;
 
+import com.sun.deploy.panel.AbstractRadioPropertyGroup;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,27 +16,25 @@ public class leetcode_46全排列 {
 class Solution7 {
     List<List<Integer>> ans = new ArrayList<List<Integer>>();
     List<Integer> t = new ArrayList<>();
-    HashMap<Integer,Integer> map = new HashMap();
     public List<List<Integer>> permute(int[] nums) {
-        dfs(nums);
+        boolean[] used = new boolean[nums.length];
+        backtrack(nums,used);
         return ans;
     }
-    public void dfs(int[] nums){
+    public void backtrack(int[] nums,boolean[] isVisited){
         if(t.size() == nums.length){
             ans.add(new ArrayList<>(t));
             return;
         }
         for(int i = 0;i<nums.length;i++){
-            if(!map.containsKey(nums[i])){
-                map.put(nums[i],999);
-                t.add(nums[i]);
-                System.out.println(t.toString());
-                dfs(nums);
-                t.remove(t.size()-1);
-                map.remove(nums[i]);
-
+            if(isVisited[i]){
+                continue;
             }
-
+            isVisited[i] = true;
+            t.add(nums[i]);
+            backtrack(nums, isVisited);
+            isVisited[i] = false;
+            t.remove(t.size()-1);
         }
 
 
