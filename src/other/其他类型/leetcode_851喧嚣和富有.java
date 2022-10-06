@@ -1,6 +1,4 @@
-package other;
-
-import org.omg.PortableInterceptor.INACTIVE;
+package other.其他类型;
 
 import java.util.*;
 

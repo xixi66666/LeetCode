@@ -1,8 +1,4 @@
-package other;
-
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
+package other.其他类型;
 
 /**
  * @author YangChenxi

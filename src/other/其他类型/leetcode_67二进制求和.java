@@ -1,6 +1,4 @@
-package other;
-
-import java.math.BigInteger;
+package other.其他类型;
 
 /**
  * @author YangChenxi

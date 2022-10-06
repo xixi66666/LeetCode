@@ -1,4 +1,4 @@
-package other;
+package other.其他类型;
 
 import java.util.HashMap;
 import java.util.Map;
