@@ -3,7 +3,7 @@ package 字符串;
 /**
  * @author YangChenxi
  */
-public class leetcode_43字符串相乘 {
+public class  leetcode_43字符串相乘 {
     public static void main(String[] args) {
         Solution1 solution1 = new Solution1();
         String multiply = solution1.multiply("123", "456");
