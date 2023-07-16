@@ -1,4 +1,4 @@
-package 其他类型;
+package 动态规划;
 
 /**
  * @author YangChenxi
