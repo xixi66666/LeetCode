@@ -16,7 +16,7 @@ public class leetcode328奇偶链表 {
 //        head[2] = node3;
 //        head[3] = node4;
 //        head[4] = node5;
-        Solution1 solution1 = new Solution1();
+        Solution328 solution1 = new Solution328();
         ListNode node = solution1.oddEvenList(node1);
         while (node!=null){
             //System.out.print(node.val);
@@ -26,14 +26,14 @@ public class leetcode328奇偶链表 {
     }
 
 }
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- }
-class Solution1 {
+//class ListNode {
+//    int val;
+//    ListNode next;
+//    ListNode() {}
+//    ListNode(int val) { this.val = val; }
+//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+// }
+class Solution328 {
     public ListNode oddEvenList(ListNode head) {
         ListNode node1 = new ListNode();
         ListNode node2 = new ListNode();

@@ -11,7 +11,7 @@ public class leetcode_1170比较字符串最小字母出现频次 {
 
     }
 }
-class Solution3 {
+class Solution1170 {
     public int[] numSmallerByFrequency(String[] queries, String[] words) {
         int[] ans = new int[queries.length];
         int[] w = new int[words.length];

@@ -2,14 +2,14 @@ package 线性表;
 
 public class leetcode42接雨水 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution42 solution = new Solution42();
         int[] n ={0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println(solution.trap(n));
     }
 
 
 }
-class Solution {
+class Solution42 {
     public int trap(int[] height) {
         int rain = 0;
         int[] left_max = new int[height.length];

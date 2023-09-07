@@ -4,12 +4,12 @@ import java.util.*;
 
 public class leetcode3无重复字符的最长子串 {
     public static void main(String[] args) {
-        Rain rain = new Rain();
+        Solution3 rain = new Solution3();
         System.out.println(rain.LengthOfRain("pwwkew"));
     }
 }
 
-class Rain{
+class Solution3{
     public int LengthOfRain(String s){
         Set<Character> set = new HashSet<>();
         int end = -1,ans = 0;
