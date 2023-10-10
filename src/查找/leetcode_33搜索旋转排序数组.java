@@ -1,13 +1,13 @@
 package 查找;
 
-public class leetcode33搜索旋转排序数组 {
+public class leetcode_33搜索旋转排序数组 {
     public static void main(String[] args) {
-        Solution2 solution2 = new Solution2();
-        int i = solution2.search(new int[]{1,3},1);
+        Solution33 solution33 = new Solution33();
+        int i = solution33.search(new int[]{1,3},1);
         System.out.println(i);
     }
 }
-class Solution2 {
+class Solution33 {
     public int search(int[] nums, int target) {
         int len = nums.length;
         int left = 0;

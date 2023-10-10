@@ -5,15 +5,15 @@ import java.util.*;
 /**
  * @author YangChenxi
  */
-public class leetcode18_四数之和 {
+public class leetcode_18四数之和 {
     public static void main(String[] args) {
-        Solution10 solution10 = new Solution10();
-        List<List<Integer>> lists = solution10.fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0);
+        Solution18 solution18 = new Solution18();
+        List<List<Integer>> lists = solution18.fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0);
         //System.out.println(lists);
 
     }
 }
-class Solution10 {
+class Solution18 {
     List<List<Integer>> ans = new ArrayList<>();
     List<Integer> t = new ArrayList<>();
     Set<List<Integer>> set = new HashSet<>();

@@ -6,13 +6,13 @@ import java.util.*;
  * @author YangChenxi
  * 排序+双指针
  */
-public class leetcode16_最接近的三数之和 {
+public class leetcode_16最接近的三数之和 {
     public static void main(String[] args) {
-        Solution10 solution10 = new Solution10();
-        System.out.println(solution10.threeSumClosest(new int[]{4,0,5,-5,3,3,0,-4,-5},-2));
+        Solution16 solution16 = new Solution16();
+        System.out.println(solution16.threeSumClosest(new int[]{4,0,5,-5,3,3,0,-4,-5},-2));
     }
 }
-class Solution10 {
+class Solution16 {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int ans = Integer.MAX_VALUE;
