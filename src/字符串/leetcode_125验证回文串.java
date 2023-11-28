@@ -13,12 +13,12 @@ package 字符串;
  **/
 public class leetcode_125验证回文串 {
     public static void main(String[] args) {
-        Solution6 solution6 = new Solution6();
-        System.out.println(solution6.isPalindrome("A man, a plan, a canal: Panama"));
+        Solution125 solution125 = new Solution125();
+        System.out.println(solution125.isPalindrome("A man, a plan, a canal: Panama"));
     }
 
 }
-class Solution6 {
+class Solution125 {
     public boolean isPalindrome(String s) {
         StringBuilder stringBuilder = new StringBuilder();
         //1.先全部变成小写
