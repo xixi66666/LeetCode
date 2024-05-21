@@ -19,6 +19,7 @@ class Solution17 {
     List<List<Integer>> ans = new ArrayList<>();
     List<Integer> t = new ArrayList<>();
     boolean[] flag;
+    String s = "哈哈哈git搞好了";
     public List<List<Integer>> fourSum(int[] nums, int target){
         flag = new boolean[nums.length];
         Arrays.sort(nums);
