@@ -1,4 +1,4 @@
-public class leetcode42接雨水 {
+public class leetcode_42接雨水 {
     public static void main(String[] args) {
         Solution42 solution = new Solution42();
         int[] n ={0,1,0,2,1,0,1,3,2,1,2,1};

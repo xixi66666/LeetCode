@@ -4,7 +4,7 @@ import java.util.List;
 /**
  *当使用list.add(list)的时候，每一次add进去的都是相同对象的引用：t，如果每一次都new一个的话就没有问题了。
  */
-public class leetcode78_子集 {
+public class leetcode_78子集 {
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,3};
         Solution78 solution1 = new Solution78();
