@@ -14,38 +14,23 @@ public class leetcode_50pow {
 1.当n很大的时候会超时
 2.pow的数学定义，不是x *= x而是需要一个值赋值为x的初始值，然后每次都×d
 
+
+第二种算法：递归
+
+
  */
 class Solution50 {
     public double myPow(double x, int n) {
-        // 特殊值判断： n == 0;x == 1.0||-1.0
+        if(n >= 0){
+            return fun1(x,n);
+        }else
+            return 1.0/fun1(x,n);
+    }
+    public double fun1(double x, int n){
         if(n == 0){
             return 1.0;
         }
-        if(x == 1.0){
-            return 1.0;
-        }
-        if(x == -1.0){
-            if(n % 2 == 0){
-                return 1.0;
-            }else{
-                return -1.0;
-            }
-        }
-        if(n == -2147483648){
-            return 0.0;
-        }
-        double d = x;
-        if(n < 0){
-            int num = -n;
-            for(int i = 1;i<num;i++){
-                x *= d;
-            }
-            x = 1/x;
-        }else{
-            for(int i = 1;i<n;i++){
-                x *= d;
-            }
-        }
-        return x;
+        double y = fun1(x,n/2);
+        return n % 2 == 0 ? y * y:y * y * x;
     }
 }
