@@ -1,3 +1,5 @@
+package 基础数据结构.数组;
+
 import java.util.*;
 
 /**
@@ -26,7 +28,7 @@ public class leetcode_1两数之和 {
  * 上策：
  * 直接利用HashMap的containsKey方法，只要put的时候将值放到第一个，下表放到第二个即可
  *
-class Solution1 {
+class 基础数据结构.数组.Solution1 {
     public int[] twoSum(int[] nums, int target) {
         int[] ret = new int[2];
         HashMap<Integer,Integer> map = new HashMap();

@@ -10,6 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class leetcode_57插入区间 {
 
 }
+
 class Solution57 {
     public int[][] insert(int[][] intervals, int[] newInterval) {
 
