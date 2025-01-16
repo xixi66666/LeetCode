@@ -1,3 +1,5 @@
+package 计算机知识技巧.滑动窗口;
+
 import java.util.HashMap;
 
 /**
@@ -19,7 +21,7 @@ public class leetcode_3无重复字符的最长子串 {
 因为是滑动窗口，所以使用left作为左边界, i作为右边界，max代表着滑动窗口的最大值
 这里的难点就是left的位置判断问题：
 当字符串为pwwkew的时候，如果只是 left = map.get(s.charAt(i)); 这样确定位置的话 就会出现两个w w分别为位置 1 2，left应该出现在2位置，但是却出现在了1
-所以left的确认应该是：left = Math.max(left,map.get(s.charAt(i))+1);
+所以left的确认应该是：left = Math.max(left,map.get(s.charAt(i))+1) 这个map.get(s.charAt(i))+1的意思就是把出现了重复字符的字符前面的全部剔除了，
 为什么是这样的呢，而不是 left = s.charAt(i) ?  牵扯到当前字符包不包含在当前最长有效子段中（非常重要！）（非常重要！）（非常重要！）
 带入 s = abba
 我们先添加a,b进map，此时left=0，我们再添加b，发现map中包含b，
@@ -29,25 +31,6 @@ public class leetcode_3无重复字符的最长子串 {
 为了处理以上2类情况，我们每次更新left，left=Math.max(left , map.get(ch)+1).
 
 
-远古代码：
-class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        Set<Character> set = new HashSet<>();
-        int start = 0;
-        int end = -1,ans = 0;
-        for(int i = 0;i<s.length();i++){
-            if(i != 0){
-                set.remove(s.charAt(i-1));
-            }
-            while (end+1<s.length() && !set.contains(s.charAt(end+1))){
-                set.add(s.charAt(end+1));
-                end++;
-            }
-            ans = Math.max(ans,end-i+1);
-        }
-        return ans;
-    }
-}
 
 */
 class Solution3 {
