@@ -1,3 +1,5 @@
+package 算法.查找.二分查找;
+
 public class leetcode_4寻找两个正序数组的中位数 {
     public static void main(String[] args) {
         Solution4 solution4 = new Solution4();
