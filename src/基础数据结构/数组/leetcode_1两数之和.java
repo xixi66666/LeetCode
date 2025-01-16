@@ -28,35 +28,16 @@ public class leetcode_1两数之和 {
  * 上策：
  * 直接利用HashMap的containsKey方法，只要put的时候将值放到第一个，下表放到第二个即可
  *
-class 基础数据结构.数组.Solution1 {
-    public int[] twoSum(int[] nums, int target) {
-        int[] ret = new int[2];
-        HashMap<Integer,Integer> map = new HashMap();
-        for(int i = 0;i<nums.length;i++){
-            map.put(i,target-nums[i]);
-        }
-        for (int i = 0;i<nums.length-1;i++){
-            for (int j = i+1;j<nums.length;j++){
-                if(nums[i] == map.get(j)){
-                    ret[0] = i;
-                    ret[1] = j;
-                    return ret;
-                }
-            }
-        }
-        return ret;
-    }
-}
 */
 class Solution1 {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (hashtable.containsKey(target - nums[i])) {
-                return new int[]{hashtable.get(target - nums[i]), i};
+            if (map.containsKey(target - nums[i])) {
+                return new int[] { i, map.get(target - nums[i]) };
             }
-            hashtable.put(nums[i], i);
+            map.put(nums[i], i);
         }
-        return new int[0];
+        return null;
     }
 }

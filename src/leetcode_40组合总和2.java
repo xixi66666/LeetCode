@@ -12,7 +12,7 @@ public class leetcode_40组合总和2 {
 /*
 思路正确，但是超时。
  */
-//class Solution2 {
+//class 基础数据结构.链表.Solution2 {
 //    List<List<Integer>> ans = new ArrayList<List<Integer>>();
 //    List<Integer> t = new ArrayList<>();
 //    Set<List<Integer>> set = new HashSet<>();

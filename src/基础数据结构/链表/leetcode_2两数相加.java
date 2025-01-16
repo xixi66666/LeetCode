@@ -1,3 +1,5 @@
+package 基础数据结构.链表;
+
 /**
  * @program: LeetCode
  * @description:
@@ -23,36 +25,33 @@ public class leetcode_2两数相加 {
  */
 class Solution2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listNode = new ListNode();
-        ListNode ret = listNode;
-        int number = 0;
-        if(l1.val == 0 && l2.val == 0){
-            listNode.val = 0;
-            return listNode;
-        }
-        while (l1 != null || l2 != null){
-            if(l1 != null){
-                number += l1.val;
+        ListNode retNode = new ListNode();
+        ListNode ret = retNode;
+        int sum = 0;
+        while (l1!= null || l2 != null) {
+            if (l1 != null) {
+                sum += l1.val;
                 l1 = l1.next;
             }
-            if(l2 != null){
-                number += l2.val;
+            if (l2 != null) {
+                sum += l2.val;
                 l2 = l2.next;
             }
             ListNode newNode = new ListNode();
-            if(number >= 10){
-                newNode.val = number-10;
-                number = 1;
-            }else {
-                newNode.val = number;
-                number = 0;
+
+            if (sum >= 10) {
+                newNode.val = sum - 10;
+                sum = 1;
+            } else {
+                newNode.val = sum;
+                sum = 0;
             }
-            listNode.next = newNode;
-            listNode = listNode.next;
+            retNode.next = newNode;
+            retNode = retNode.next;
         }
-        if(number == 1){
-            listNode.next = new ListNode(1);
+        if (sum == 1) {
+            retNode.next = new ListNode(1);
         }
-        return ret;
+        return ret.next;
     }
 }
