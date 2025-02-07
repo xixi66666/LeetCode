@@ -1,3 +1,5 @@
+package 基础数据结构.字符串;
+
 import java.util.ArrayList;
 import java.util.List;
 
