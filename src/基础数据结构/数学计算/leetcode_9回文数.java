@@ -1,3 +1,5 @@
+package 基础数据结构.数学计算;
+
 /**
  * @Author: [xixixiaozi]
  * @Description:
