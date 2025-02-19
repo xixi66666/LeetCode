@@ -1,3 +1,5 @@
+package 算法.动态规划;
+
 /**
  * @program: LeetCode
  * @description: 10
@@ -7,7 +9,7 @@
 public class leetcode_10正则表达式匹配 {
     public static void main(String[] args) {
         Solution10 solution10 = new Solution10();
-        boolean flag = solution10.isMatch("aa", "a*");
+        boolean flag = solution10.isMatch("aab", "c*a*b");
         System.out.println(flag);
 
     }
@@ -24,7 +26,6 @@ public class leetcode_10正则表达式匹配 {
  * dp[i][j] =  dp[i-1][j-1] && s[i-1] = p[j-1]
  * 2.2 s[i-1] != p[j-1]
  * dp[i][j] = false
- *
  * 3. 当 p 的第 j-1 个字符是 * 的时候
  * 有一个重要概念 ： * 匹配0次的时候 例如 abc* 匹配0次时为（ab）  匹配1次的时候 （abc）
  * ！！！ 但是有个问题是 * 可以匹配多次，那么就要写很多次的状态转移方程
@@ -60,32 +61,26 @@ class Solution10 {
                     if (i == 0) {
                         dp[i][j] = false;
                     } else {
-                        if (s.charAt(i - 1) != p.charAt(j - 1)) {
-                            dp[i][j] = false;
-                        }
                         if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
                             dp[i][j] = dp[i - 1][j - 1];
                         }
                     }
                 } else {
-                    if (i == 0) {
-                        dp[i][j] = false;
-                    } else {
-                        //这一步是字符不匹配然后直接扔掉这两个字符的情况
-                        if (s.charAt(i - 1) != p.charAt(j - 2)) {
-                            dp[i][j] = dp[i][j - 2];
-                        }
+                    dp[i][j] = dp[i][j - 2];
+                    /*
+                    这里我一直错的地方是我理解i=0的时候我给dp[i][j] 都赋值为 false了。其实不对
+                    因为i=0时的dp[i][j] 的决定因素是 dp[i][j - 2] ： 意思是当p[j-1] 为 * 的时候 我选择匹配0次 以 s = aa p = a*举例，那么dp[0][2] = dp[0][0] = true
 
-                        if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 1) == '.') {
-                            dp[i][j] = dp[i - 1][j] || dp[i][j - 2];
+                    这里为什么要i != 0 呢？因为像上面说的 匹配s末尾的字符，把这个字符扔掉，还可以匹配。 如果是0的话没办法扔掉这个字符会空指针异常。而为0且p[j-1] 为 *的情况我们已经讨论过。所以不需要0
+                     */
+                    if (i != 0) {
+                        if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
+                            dp[i][j] = dp[i][j] || dp[i - 1][j] ;
                         }
                     }
                 }
             }
         }
-
-
         return dp[sLength][pLength];
-
     }
 }
