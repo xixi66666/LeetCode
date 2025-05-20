@@ -1,3 +1,5 @@
+package 基础数据结构.数学计算;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+package 基础数据结构.数学计算;
 
 /*
 * @Auther:xixixiaozi
