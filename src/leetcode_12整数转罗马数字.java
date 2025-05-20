@@ -13,6 +13,11 @@ import java.util.Map;
  * @Description:${Description}
  */
 public class leetcode_12整数转罗马数字 {
+    public static void main(String[] args) {
+        Solution12 solution12 = new Solution12();
+        String s = solution12.intToRoman(1200);
+        System.out.println(s);
+    }
 }
 class Solution12 {
     int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
@@ -23,7 +28,7 @@ class Solution12 {
      *                罗马数字由 7 个不同的单字母符号组成，再根据减法规则又总结出来了额外的 6 个复合符号。
      * @Author:xixixiaozi
      * @date:2025/2/24 22:25
-     * @param	num
+     * @param    num
      * @return:java.lang.String
     */
     public String intToRoman(int num) {
