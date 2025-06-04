@@ -6,11 +6,45 @@ import java.util.*;
  */
 public class leetcode_16最接近的三数之和 {
     public static void main(String[] args) {
-        Solution16 solution16 = new Solution16();
-        System.out.println(solution16.threeSumClosest(new int[]{4,0,5,-5,3,3,0,-4,-5},-2));
+        Solution16_1 solution16 = new Solution16_1();
+        System.out.println(solution16.threeSumClosest(new int[]{-1,2,1,-4},1));
     }
 }
-class Solution16 {
+
+/*
+    写出了递归的解法，但是会超时
+ */
+class Solution16_1{
+    int ans = Integer.MAX_VALUE;
+    int sum = 0;
+    List<Integer> list = new ArrayList<>();
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        backtrack(nums,target,0);
+        return ans;
+    }
+
+    public void backtrack(int[] nums,int target,int cur){
+        //当三数之和是当前最近接近target的时候更新ans
+        if(list.size() == 3){
+            if(Math.abs(target-ans) > Math.abs(target-sum)){
+                ans = sum;
+            }
+            return;
+        }
+        if(list.size() > 3 || cur >= nums.length){
+            return;
+        }
+        list.add(nums[cur]);
+        sum += nums[cur];
+        backtrack(nums,target,cur+1);
+        list.remove(list.size()-1);
+        sum -= nums[cur];
+        backtrack(nums,target,cur+1);
+
+    }
+}
+class Solution16_2 {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int ans = Integer.MAX_VALUE;

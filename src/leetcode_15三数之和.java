@@ -10,6 +10,10 @@ public class leetcode_15三数之和 {
         System.out.println(lists.toString());
     }
 }
+
+/*
+写出了递归的解法，但是会超时
+ */
 class Solution15_1 {
     List<List<Integer>> ans = new ArrayList<>();
     List<Integer> t = new ArrayList<>();
@@ -22,9 +26,11 @@ class Solution15_1 {
     }
 
     public void backtrack(int[] nums, int cur) {
-        if (cur == 0 || nums[cur] != nums[cur - 1]) {
             if (t.size() == 3 && sum == 0) {
-                ans.add(new ArrayList<>(t));
+                if(!ans.contains(t)){
+                    ans.add(new ArrayList<>(t));
+                }
+
                 return;
             }
             if (t.size() > 3 || cur >= nums.length) {
@@ -38,7 +44,7 @@ class Solution15_1 {
             backtrack(nums, cur + 1);
         }
     }
-}
+
 
 class Solution15_2 {
     public List<List<Integer>> threeSum(int[] nums) {
