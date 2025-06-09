@@ -35,6 +35,7 @@ class Solution18 {
             }
             /*
             因为进的是i的循环啊，所以操作的都是i，不是cur，cur就是一个记录i的位置的
+            为什么需要一个flag[]  因为题目要求的是四个数字各不相同。
              */
             t.add(nums[i]);
             flag[i] = true;
