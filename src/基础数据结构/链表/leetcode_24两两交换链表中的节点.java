@@ -1,6 +1,5 @@
 package 基础数据结构.链表;
 
-import 企业笔试.华为.node;
 
 /**
  * @author YangChenxi
