@@ -20,8 +20,11 @@ class Solution25 {
         ListNode ans = new ListNode();
         ListNode ret = ans;
         ans.next = head;
+        ListNode first = head;
         for(int i = 0;i<reverseNum;i++){
-
+            for(int j = 0;j<k-1;j++){
+                ans.next = first.next;
+            }
         }
         return ret;
     }
